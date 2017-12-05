@@ -1,12 +1,26 @@
-﻿<Window x:Class="POOmall.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POOmall"
+        xmlns:View="clr-namespace:POOmall.View"
+        x:Class="POOmall.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+  <Grid>
+    <TabControl>
+      <TabItem Header="TabItem">
+        <Grid Background="#FFE5E5E5">
+          <View:CrearPisosView />
+        </Grid>
+      </TabItem>
+      <TabItem Header="TabItem">
+        <Grid Background="#FFE5E5E5">
+          <View:ConfiguracionView />
+        </Grid>
+      </TabItem>
+    </TabControl>
+  </Grid>
 </Window>

@@ -54,10 +54,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Model\Piso.cs" />
     <Compile Include="Model\Reporte.cs" />
     <Compile Include="Model\Tienda.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="View\ConfiguracionView.xaml.cs">
+      <DependentUpon>ConfiguracionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfiguracionViewModel.cs" />
     <Compile Include="View\CrearPisosView.xaml.cs">
       <DependentUpon>CrearPisosView.xaml</DependentUpon>
     </Compile>
@@ -78,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ConfiguracionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CrearPisosView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
