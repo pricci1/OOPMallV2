@@ -24,6 +24,7 @@ namespace POOmall.View
         public SimulacionViewModel()
         {
             _dia = 0;
+            ComenzarCommand = new RelayCommand(OnComenzar, CanComenzar);
         }
 
         private int _dia;
@@ -32,12 +33,30 @@ namespace POOmall.View
         public void GenerarReporteDia()
         {
             Dia++;
+            NotifyPropertyChanged("Dia");
             foreach (var tienda in Tiendas)
             {
                 Reportes.Add(new Reporte(tienda,Dia,tienda.CalcularCantidadClientes(),tienda.CalcularGanacia()));
             }
+            NotifyPropertyChanged("Reportes");
         }
 
+        #region Botón Comenzar Simulación
+
+        public RelayCommand ComenzarCommand { get; }
+        private bool CanComenzar()
+        {
+            //return Settings.Tiendas.Count > 0;
+            return true;
+        }
+
+        private void OnComenzar()
+        {
+            GenerarReporteDia();
+            
+        }
+
+        #endregion
 
 
 

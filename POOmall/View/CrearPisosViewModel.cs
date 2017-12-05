@@ -36,7 +36,11 @@ namespace POOmall.View
         public ObservableCollection<Tienda> Tiendas
         {
             get => Settings.Tiendas;
-            set => Settings.Tiendas = value;
+            set
+            {
+                Settings.Tiendas = value;
+                NotifyPropertyChanged("Settings.Tiendas");
+            }
         }
 
         private Piso _selectedPiso;

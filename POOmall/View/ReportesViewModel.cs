@@ -32,6 +32,7 @@ namespace POOmall.View
             {
                 _selectedTienda = value;
                 NotifyPropertyChanged("SelectedTienda");
+                NotifyPropertyChanged("ReporteTiendaSeleccionadaDiaSeleccionado");
             }
         }
 
@@ -43,16 +44,24 @@ namespace POOmall.View
             {
                 _selectedDia = value;
                 NotifyPropertyChanged("SelectedDia");
+                NotifyPropertyChanged("ReportesSelectedDia");
             }
         }
 
         //private ObservableCollection<Reporte> _reportesSelectedDia;
-        public ObservableCollection<Reporte> ResportesSelectedDia
+        public ObservableCollection<Reporte> ReportesSelectedDia
         {
-            get => (ObservableCollection<Reporte>) Reportes.Where(r => r.Dia == SelectedDia);
+            //https://stackoverflow.com/a/3559830
+            //get => (ObservableCollection<Reporte>) Reportes.Where(r => r.Dia == SelectedDia);
+            get => new ObservableCollection<Reporte>(Reportes.Any(r => r.Dia == SelectedDia)? Reportes.Where(r => r.Dia == SelectedDia):new ObservableCollection<Reporte>());
             //set => Settings.Reportes = value;
         }
 
+        public Reporte ReporteTiendaSeleccionadaDiaSeleccionado
+        {
+            //get => ReportesSelectedDia.Where(reporte => reporte.Tienda == SelectedTienda).First();
+            get => ReportesSelectedDia.Any(reporte => reporte.Tienda == SelectedTienda) ? ReportesSelectedDia.First(reporte => reporte.Tienda == SelectedTienda) :new Reporte(SelectedTienda,SelectedDia,0,0);
+        }
 
 
 

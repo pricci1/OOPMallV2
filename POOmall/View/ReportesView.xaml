@@ -62,7 +62,10 @@
           </StackPanel>
           <StackPanel Grid.Column="1">
             <Label Content="{Binding SelectedDia}"/>
-          </StackPanel>
+            
+            <TextBlock Text="{Binding ReporteTiendaSeleccionadaDiaSeleccionado}" />
+
+            </StackPanel>
         </Grid>
 
       </TabItem>
@@ -70,7 +73,77 @@
         <Grid Background="#FFE5E5E5" />
       </TabItem>
         <TabItem Header="General acomulado">
-          <Grid Background="#FFE5E5E5" />
+          <Grid Background="#FFE5E5E5">
+            <StackPanel>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="1*" />
+                  <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Día:"
+                       Grid.Column="0" />
+                <Label Content="Texto"
+                       Grid.Column="1" />
+              </Grid>
+              
+            </StackPanel>
+          </Grid>
         </TabItem>
       </TabControl>
     </StackPanel>
