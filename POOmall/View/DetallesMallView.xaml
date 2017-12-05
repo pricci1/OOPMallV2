@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:POOmall.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+  <UserControl.DataContext>
+    <local:DetallesMallViewModel />
+  </UserControl.DataContext>
     <Grid>
             
     </Grid>
