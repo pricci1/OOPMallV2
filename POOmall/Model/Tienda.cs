@@ -8,13 +8,13 @@ namespace POOmall.Model
 {
     public class Tienda
     {
-        public string Nombre { get; }
-        public int Piso { get; }
-        public int CantidadEmpleados { get; }
-        public int Area { get; }
-        public int PrecioMin { get; }
-        public int PrecioMax { get; }
-        public Settings.Categoria Categoria { get; }
+        public string Nombre { get; set; }
+        public int Piso { get; set; }
+        public int CantidadEmpleados { get; set; }
+        public int Area { get; set; }
+        public int PrecioMin { get; set; }
+        public int PrecioMax { get; set; }
+        public Settings.Categoria Categoria { get; set; }
 
         public int CantidadClientesHoy;
 

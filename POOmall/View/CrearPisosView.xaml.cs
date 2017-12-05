@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,5 +25,19 @@ namespace POOmall.View
         {
             InitializeComponent();
         }
+
+        #region Solo permitir imput numeros
+        //https://stackoverflow.com/a/1268648
+        private static bool IsTextAllowed(string text)
+        {
+            Regex regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
+        }
+        private void OnlyNumbers(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+        #endregion
+
     }
 }

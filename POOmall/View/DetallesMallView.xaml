@@ -38,19 +38,30 @@
              FontWeight="Bold" />
       <StackPanel Orientation="Horizontal">
         <Label Content="Nombre: " />
-        <Label Content="{Binding SelectedTienda.Nombre}" />
+        <TextBox Text="{Binding SelectedTienda.Nombre}"
+                 Width="75" />
       </StackPanel>
       <StackPanel Orientation="Horizontal">
         <Label Content="Piso: " />
-        <Label Content="blah" />
+        <Label Content="{Binding SelectedTienda.Piso}" />
       </StackPanel>
-      <StackPanel Orientation="Horizontal">
+      <StackPanel Orientation="Vertical">
         <Label Content="Cantidad de empleados: " />
-        <Label Content="blah" />
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,-5,0,0">
+          <Slider Minimum="1"
+                  Name="SliderEmpleados"
+                  Maximum="100"
+                  TickFrequency="1"
+                  IsSnapToTickEnabled="True"
+                  Width="120"
+                  Value="{Binding SelectedTienda.CantidadEmpleados}" />
+          <Label Content="{Binding ElementName=SliderEmpleados, Path=Value}" />
+        </StackPanel>
       </StackPanel>
       <StackPanel Orientation="Horizontal">
         <Label Content="Area: " />
-        <Label Content="blah" />
+        <Label Content="{Binding SelectedTienda.Area}" />
       </StackPanel>
       <StackPanel Orientation="Horizontal">
         <Label Content="Precio mínimo: " />

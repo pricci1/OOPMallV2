@@ -82,10 +82,31 @@
       </Grid>
 
       <Label Content="Nombre:" />
+      <TextBox Margin="0,-5,0,0" Text="{Binding NombreTienda}"/>
       <Label Content="Cantidad de empleados:" />
-      <Label Content="Area:" />
+      <StackPanel Orientation="Horizontal"
+                  Margin="0,-5,0,0">
+        <Slider Minimum="1"
+                Name="SliderEmpleados"
+                Maximum="100"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                Width="120" 
+                Value="{Binding CantidadEmpleados}"/>
+        <Label Content="{Binding ElementName=SliderEmpleados, Path=Value}" />
+      </StackPanel>
+      <Label Content="Area:"
+             Margin="0,-5,0,0" />
+      <TextBox Margin="0,-5,0,0"
+               PreviewTextInput="OnlyNumbers" Text="{Binding AreaTienda}"/>
       <Label Content="Precio mínimo:" />
+      <TextBox Margin="0,-5,0,0"
+               PreviewTextInput="OnlyNumbers" 
+               Text="{Binding PrecioMin}"/>
       <Label Content="Precio máximo:" />
+      <TextBox Margin="0,-5,0,0"
+               PreviewTextInput="OnlyNumbers" 
+               Text="{Binding PrecioMax}"/>
       <Button Content="Añadir"
               Margin="15,15,15,0"
               Command="{Binding AddTiendaCommand}" />

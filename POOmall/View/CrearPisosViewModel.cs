@@ -14,7 +14,7 @@ namespace POOmall.View
     {
         public int CuentaPisos { get; set; }
 
-        
+
 
         public CrearPisosViewModel()
         {
@@ -25,8 +25,8 @@ namespace POOmall.View
             SliderAreaPisoValue = 1500;
         }
 
-        
-        
+
+
         public ObservableCollection<Piso> Pisos
         {
             get => Settings.Pisos;
@@ -68,7 +68,7 @@ namespace POOmall.View
             get => _areaLastPiso;
             set
             {
-                _areaLastPiso = value; 
+                _areaLastPiso = value;
                 NotifyPropertyChanged("AreaLastPiso");
             }
         }
@@ -84,17 +84,66 @@ namespace POOmall.View
 
         private void OnAddPiso()
         {
-            Pisos.Add(new Piso(CuentaPisos++,SliderAreaPisoValue));
+            Pisos.Add(new Piso(CuentaPisos++, SliderAreaPisoValue));
             AreaLastPiso = Pisos.Last().Area;
-            
+
         }
 
         #endregion
 
 
         #region AddTienda
-        //private 
 
+        private string _nombreTienda;
+        public string NombreTienda
+        {
+            get => _nombreTienda;
+            set
+            {
+                _nombreTienda = value;
+                NotifyPropertyChanged("NombreTienda");
+            }
+        }
+        private int _cantidadEmpleados;
+        public int CantidadEmpleados
+        {
+            get => _cantidadEmpleados;
+            set
+            {
+                _cantidadEmpleados = value;
+                NotifyPropertyChanged("CantidadEmpleados");
+            }
+        }
+        private int _areaTienda;
+        public int AreaTienda
+        {
+            get => _areaTienda;
+            set
+            {
+                _areaTienda = value;
+                NotifyPropertyChanged("AreaTienda");
+            }
+        }
+        private int _precioMin;
+        public int PrecioMin
+        {
+            get => _precioMin;
+            set
+            {
+                _precioMin = value;
+                NotifyPropertyChanged("PrecioMin");
+            }
+        }
+        private int _precioMax;
+        public int PrecioMax
+        {
+            get => _precioMax;
+            set
+            {
+                _precioMax = value;
+                NotifyPropertyChanged("PrecioMax");
+            }
+        }
         public RelayCommand AddTiendaCommand { get; private set; }
 
         private bool CanAddTienda()
@@ -104,7 +153,12 @@ namespace POOmall.View
 
         private void OnAddTienda()
         {
-            Tiendas.Add(new Tienda("Test", SelectedPiso.Numero,12,100,1,10,Settings.Categoria.Ferreteria));
+            Tiendas.Add(new Tienda(NombreTienda, SelectedPiso.Numero, CantidadEmpleados, AreaTienda, PrecioMin, PrecioMax, Settings.Categoria.Ferreteria));
+            NombreTienda = "blank";
+            CantidadEmpleados = 1;
+            AreaTienda = 1;
+            PrecioMin = 1;
+            PrecioMax = 2;
         }
         #endregion
 

@@ -8,10 +8,10 @@ namespace POOmall.Model
 {
     public class Reporte
     {
-        public Tienda Tienda { get; }
-        public int Dia { get; }
-        public int CantidadClientes { get; }
-        public int Ganancia { get; }
+        public Tienda Tienda { get; set; }
+        public int Dia { get; set; }
+        public int CantidadClientes { get; set; }
+        public int Ganancia { get; set; }
 
         public Reporte(Tienda tienda, int dia, int cantidadClientes, int ganancia)
         {
