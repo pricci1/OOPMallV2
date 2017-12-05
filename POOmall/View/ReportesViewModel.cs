@@ -11,6 +11,10 @@ namespace POOmall.View
 {
     public class ReportesViewModel : INotifyPropertyChanged
     {
+        public ReportesViewModel()
+        {
+            GenerarCommand = new RelayCommand(OnGenerar, CanGenerar);
+        }
 
         public ObservableCollection<Reporte> Reportes
         {
@@ -73,6 +77,22 @@ namespace POOmall.View
             }
             return new ReporteAcomulado(0,0,new Tienda("",1,0,0,1,10,Settings.Categoria.Ferreteria), 0, new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria), 0, new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria), new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria));
         }
+
+        public RelayCommand GenerarCommand { get; }
+        private bool CanGenerar()
+        {
+
+            return true;
+        }
+
+        private void OnGenerar()
+        {
+            NotifyPropertyChanged("ReporteAcomulado");
+
+        }
+
+
+
 
         #region Implementación INotify...
         // https://stackoverflow.com/a/8316100

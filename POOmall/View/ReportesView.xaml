@@ -85,6 +85,7 @@
                        Grid.Column="0" />
                 <Label Content="{Binding ReporteAcomulado.ClientesPromedio}"
                        Grid.Column="1" />
+                <Button Grid.Column="2" Content="Generar" Command="{Binding GenerarCommand}"/>
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
