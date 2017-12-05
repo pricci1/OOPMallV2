@@ -37,8 +37,21 @@
     <StackPanel Grid.Column="1">
       <Label Content="Crear pisos:"
              FontWeight="Bold" />
-      <Label Content="Area:" />
-      <Slider />
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*" />
+          <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Area:"
+               Grid.ColumnSpan="2" />
+        <Label Content="{Binding ElementName=Slider1, Path=Value}"
+               Grid.Column="1" />
+      </Grid>
+      <Slider Minimum="500"
+              Name="Slider1"
+              Maximum="1500"
+              TickFrequency="1"
+              IsSnapToTickEnabled="True" />
       <Label />
       <Button Content="Añadir"
               Margin="15,0,15,0"

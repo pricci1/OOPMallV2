@@ -41,7 +41,6 @@ namespace POOmall.View
             }
         }
 
-        public string NumeroPisoSeleccionado => $"Piso: {SelectedPiso.Numero}";
 
         #region AddPiso
         public RelayCommand AddPisoCommand { get; }
