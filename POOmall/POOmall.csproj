@@ -72,6 +72,14 @@
       <DependentUpon>DetallesMallView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DetallesMallViewModel.cs" />
+    <Compile Include="View\ReportesView.xaml.cs">
+      <DependentUpon>ReportesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportesViewModel.cs" />
+    <Compile Include="View\SimulacionView.xaml.cs">
+      <DependentUpon>SimulacionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimulacionViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +101,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DetallesMallView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SimulacionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

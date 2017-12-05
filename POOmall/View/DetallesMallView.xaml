@@ -68,7 +68,7 @@
         <Label Content="{Binding SelectedTienda.PrecioMin}" />
       </StackPanel>
       <StackPanel Orientation="Horizontal">
-        <Label Content="Precio Máximo: " />
+        <Label Content="Precio máximo: " />
         <Label Content="{Binding SelectedTienda.PrecioMax}" />
       </StackPanel>
       

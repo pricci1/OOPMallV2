@@ -3,27 +3,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POOmall"
-        xmlns:View="clr-namespace:POOmall.View"
+        xmlns:view="clr-namespace:POOmall.View"
         x:Class="POOmall.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow"
-        Height="350"
+        Title="POOMall"
+        Height="362"
         Width="614">
   <Grid>
     <TabControl>
-      <TabItem Header="TabItem">
+
+      <TabItem Header="Datos Inicio">
         <Grid Background="#FFE5E5E5">
-          <View:CrearPisosView />
+          <view:ConfiguracionView />
         </Grid>
       </TabItem>
-      <TabItem Header="TabItem">
+      <TabItem Header="Pisos">
         <Grid Background="#FFE5E5E5">
-          <View:ConfiguracionView />
+          <view:CrearPisosView />
         </Grid>
       </TabItem>
-      <TabItem Header="TabItem">
+      <TabItem Header="Tiendas">
         <Grid Background="#FFE5E5E5">
-          <View:DetallesMallView />
+          <view:DetallesMallView />
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Simulación">
+        <Grid Background="#FFE5E5E5">
+          <view:SimulacionView />
+
+        </Grid>
+      </TabItem>
+      <TabItem Header="Reportes">
+        <Grid Background="#FFE5E5E5">
+          <view:ReportesView />
+
+
         </Grid>
       </TabItem>
     </TabControl>

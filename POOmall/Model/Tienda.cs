@@ -36,20 +36,22 @@ namespace POOmall.Model
             GananciaTienda = 0;
         }
 
-        public void CalcularCantidadClientes()
+        public int CalcularCantidadClientes()
         {
             int cmax = (int)(CantidadClientesHoy + Area *
                                          Math.Max(100 - (PrecioMax * 0.5 + PrecioMin * 0.5), 0) * 0.001 *
                                          CantidadEmpleados);
             CantidadClientesHoy = Settings.GetRandomInt(0, cmax);
+            return CantidadClientesHoy;
 
         }
 
-        public void CalcularGanacia()
+        public int CalcularGanacia()
         {
             int ventaPromedio = Settings.GetRandomInt(PrecioMin, PrecioMax);
             int costoArriendo = Area * Settings.PrecioArriendo;
             GananciaTienda = ventaPromedio * CantidadClientesHoy - CantidadEmpleados * Settings.SueldoEmpreados - costoArriendo;
+            return GananciaTienda;
         }
     }
 }
