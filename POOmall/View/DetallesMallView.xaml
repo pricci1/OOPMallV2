@@ -65,11 +65,11 @@
       </StackPanel>
       <StackPanel Orientation="Horizontal">
         <Label Content="Precio mínimo: " />
-        <Label Content="blah" />
+        <Label Content="{Binding SelectedTienda.PrecioMin}" />
       </StackPanel>
       <StackPanel Orientation="Horizontal">
         <Label Content="Precio Máximo: " />
-        <Label Content="blah" />
+        <Label Content="{Binding SelectedTienda.PrecioMax}" />
       </StackPanel>
       
     </StackPanel>
