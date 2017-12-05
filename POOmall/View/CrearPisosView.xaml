@@ -41,8 +41,7 @@
              FontWeight="Bold" />
       <ListBox ItemsSource="{Binding Pisos}"
                SelectedItem="{Binding SelectedPiso}"
-               Height="250">
-      </ListBox>
+               Height="250"/>
     </StackPanel>
     <StackPanel Grid.Column="1">
       <Label Content="Crear pisos:"

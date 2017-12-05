@@ -105,7 +105,7 @@ namespace POOmall.View
 
         private void OnAddTienda()
         {
-            Tiendas.Add(new Tienda("Test", 12,12,100,1,10,Settings.Categoria.Ferreteria));
+            Tiendas.Add(new Tienda("Test", SelectedPiso.Numero,12,100,1,10,Settings.Categoria.Ferreteria));
         }
         #endregion
 

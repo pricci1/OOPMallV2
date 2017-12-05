@@ -21,6 +21,11 @@
           <View:ConfiguracionView />
         </Grid>
       </TabItem>
+      <TabItem Header="TabItem">
+        <Grid Background="#FFE5E5E5">
+          <View:DetallesMallView />
+        </Grid>
+      </TabItem>
     </TabControl>
   </Grid>
 </Window>
