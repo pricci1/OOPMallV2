@@ -79,66 +79,66 @@
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Clientes promedio:"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.ClientesPromedio}"
                        Grid.Column="1" />
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Ganancia promedio::"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.GananciaPromedio}"
                        Grid.Column="1" />
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Tienda mayor ganancia:"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.TiendaMayorGanancia.Nombre}"
                        Grid.Column="1" />
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Tienda menor ganancia:"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.TiendaMenorGanancia.Nombre}"
                        Grid.Column="1" />
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Tienda mayor cantidad de clientes:"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.TiendaMayorClientes.Nombre}"
                        Grid.Column="1" />
               </Grid>
               <Grid>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1*" />
                   <ColumnDefinition Width="1*" />
-                  <ColumnDefinition Width="6*" />
+                  <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Día:"
+                <Label Content="Tienda menor cantidad de clientes:"
                        Grid.Column="0" />
-                <Label Content="Texto"
+                <Label Content="{Binding ReporteAcomulado.TiendaMenorClientes.Nombre}"
                        Grid.Column="1" />
               </Grid>
               

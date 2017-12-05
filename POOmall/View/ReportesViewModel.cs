@@ -63,8 +63,16 @@ namespace POOmall.View
             get => ReportesSelectedDia.Any(reporte => reporte.Tienda == SelectedTienda) ? ReportesSelectedDia.First(reporte => reporte.Tienda == SelectedTienda) :new Reporte(SelectedTienda,SelectedDia,0,0);
         }
 
+        public ReporteAcomulado ReporteAcomulado { get => GetReporteAcomulado(); }
 
-
+        public ReporteAcomulado GetReporteAcomulado()
+        {
+            if (Reportes.Count>0)
+            {
+                return new ReporteAcomulado((int)Reportes.Average(r => r.CantidadClientes), (int)Reportes.Average(r => r.Ganancia), Reportes.OrderBy(r => r.Ganancia).First().Tienda, 100, Reportes.OrderByDescending(r => r.Ganancia).First().Tienda, 0, Reportes.OrderBy(r => r.CantidadClientes).First().Tienda, Reportes.OrderByDescending(r => r.CantidadClientes).First().Tienda);
+            }
+            return new ReporteAcomulado(0,0,new Tienda("",1,0,0,1,10,Settings.Categoria.Ferreteria), 0, new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria), 0, new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria), new Tienda("", 1, 0, 0, 1, 10, Settings.Categoria.Ferreteria));
+        }
 
         #region Implementación INotify...
         // https://stackoverflow.com/a/8316100
