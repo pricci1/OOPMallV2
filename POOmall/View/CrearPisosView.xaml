@@ -5,12 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:POOmall.View"
              xmlns:view="clr-namespace:POOmall.View"
+             xmlns:data="clr-namespace:POOmall.Model"
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="300">
   <UserControl.DataContext>
     <view:CrearPisosViewModel />
   </UserControl.DataContext>
+  <UserControl.Resources>
+    <DataTemplate DataType="{x:Type data:Piso}">
+      <StackPanel>
+        <TextBlock Text="{Binding Numero}" />
+        <TextBlock Text="{Binding Area}" />
+      </StackPanel>
+    </DataTemplate>
+  </UserControl.Resources>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="2*" />
@@ -18,10 +27,21 @@
       <ColumnDefinition Width="1*" />
     </Grid.ColumnDefinitions>
     <StackPanel Grid.Column="0">
-      <Label Content="Lista de pisos:"/>
+      <Label Content="Lista de pisos:"
+             FontWeight="Bold" />
       <ListBox ItemsSource="{Binding Pisos}"
                Height="250">
       </ListBox>
     </StackPanel>
+    <StackPanel Grid.Column="1">
+      <Label Content="Crear pisos:"
+             FontWeight="Bold" />
+    </StackPanel>
+    <StackPanel Grid.Column="2">
+      <Label Content="Crear tiendas:"
+             FontWeight="Bold" />
+      <Label Content="Piso: " />
+    </StackPanel>
+
   </Grid>
 </UserControl>

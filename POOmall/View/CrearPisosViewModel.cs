@@ -16,5 +16,6 @@ namespace POOmall.View
             set => Settings.Pisos = value;
         }
 
+        public Piso SelectedPiso;
     }
 }
