@@ -15,8 +15,9 @@
     <DataTemplate DataType="{x:Type data:Tienda}">
       <StackPanel Orientation="Horizontal">
         <Label Content="{Binding Nombre}" />
-        <Label Content="Piso: "/>
-        <Label Content="{Binding Piso}" Margin="-10,0,0,0"/>
+        <Label Content="Piso: " />
+        <Label Content="{Binding Piso}"
+               Margin="-10,0,0,0" />
       </StackPanel>
     </DataTemplate>
   </UserControl.Resources>
@@ -26,10 +27,40 @@
       <ColumnDefinition Width="1*" />
     </Grid.ColumnDefinitions>
     <StackPanel Grid.Column="0">
-      <Label Content="Locales"
+      <Label Content="Tiendas"
              FontWeight="Bold" />
       <ListBox ItemsSource="{Binding Tiendas}"
-        Height="250" />
+               Height="250"
+               SelectedItem="{Binding SelectedTienda}" />
+    </StackPanel>
+    <StackPanel Grid.Column="1">
+      <Label Content="Detalles tienda seleccionada"
+             FontWeight="Bold" />
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Nombre: " />
+        <Label Content="{Binding SelectedTienda.Nombre}" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Piso: " />
+        <Label Content="blah" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Cantidad de empleados: " />
+        <Label Content="blah" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Area: " />
+        <Label Content="blah" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Precio mínimo: " />
+        <Label Content="blah" />
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Precio Máximo: " />
+        <Label Content="blah" />
+      </StackPanel>
+      
     </StackPanel>
 
   </Grid>

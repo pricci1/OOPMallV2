@@ -39,7 +39,6 @@ namespace POOmall.View
             set => Settings.Tiendas = value;
         }
 
-        //public Piso SelectedPiso;
         private Piso _selectedPiso;
         public Piso SelectedPiso
         {
