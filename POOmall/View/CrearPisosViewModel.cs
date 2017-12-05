@@ -1,21 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using POOmall.Model;
 
 namespace POOmall.View
 {
-    public class CrearPisosViewModel
+    public class CrearPisosViewModel : INotifyPropertyChanged
     {
+        public int CuentaPisos { get; set; }
+
+        
+
         public CrearPisosViewModel()
         {
             AddTiendaCommand = new RelayCommand(OnAddTienda, CanAddTienda);
             AddPisoCommand = new RelayCommand(OnAddPiso, CanAddPiso);
+            AreaLastPiso = 1500;
+            CuentaPisos = 1;
+            SliderAreaPisoValue = 1500;
         }
 
+        
         
         public ObservableCollection<Piso> Pisos
         {
@@ -38,6 +48,29 @@ namespace POOmall.View
             {
                 _selectedPiso = value;
                 AddTiendaCommand.RaiseCanExecuteChanged();
+                NotifyPropertyChanged("SelectedPiso");
+            }
+        }
+
+        private int _areaLastPiso;
+        private int _sliderAreaPisoValue;
+
+        public int SliderAreaPisoValue
+        {
+            get => _sliderAreaPisoValue;
+            set
+            {
+                _sliderAreaPisoValue = value;
+                NotifyPropertyChanged("SliderAreaPisoValue");
+            }
+        }
+        public int AreaLastPiso
+        {
+            get => _areaLastPiso;
+            set
+            {
+                _areaLastPiso = value; 
+                NotifyPropertyChanged("AreaLastPiso");
             }
         }
 
@@ -52,13 +85,17 @@ namespace POOmall.View
 
         private void OnAddPiso()
         {
-            Pisos.Add(new Piso(1,1000));
+            Pisos.Add(new Piso(CuentaPisos++,SliderAreaPisoValue));
+            AreaLastPiso = Pisos.Last().Area;
+            
         }
 
         #endregion
 
 
         #region AddTienda
+        //private 
+
         public RelayCommand AddTiendaCommand { get; private set; }
 
         private bool CanAddTienda()
@@ -69,6 +106,20 @@ namespace POOmall.View
         private void OnAddTienda()
         {
             Tiendas.Add(new Tienda("Test", 12,12,100,1,10,Settings.Categoria.Ferreteria));
+        }
+        #endregion
+
+        #region Implementación INotify...
+        // https://stackoverflow.com/a/8316100
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (null != handler)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
         #endregion
 

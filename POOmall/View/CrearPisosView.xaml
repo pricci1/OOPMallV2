@@ -15,8 +15,18 @@
   <UserControl.Resources>
     <DataTemplate DataType="{x:Type data:Piso}">
       <StackPanel>
-        <TextBlock Text="{Binding Numero}" />
-        <TextBlock Text="{Binding Area}" />
+        <StackPanel Orientation="Horizontal">
+          <Label Content="Piso número" />
+          <TextBlock Text="{Binding Numero}"
+                     Margin="0,5,0,0" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <Label Content="Área:  " />
+          <TextBlock Text="{Binding Area}"
+                     Margin="0,5,0,0" />
+        </StackPanel>
+
+
       </StackPanel>
     </DataTemplate>
   </UserControl.Resources>
@@ -49,8 +59,9 @@
       </Grid>
       <Slider Minimum="500"
               Name="Slider1"
-              Maximum="1500"
+              Maximum="{Binding AreaLastPiso}"
               TickFrequency="1"
+              Value="{Binding SliderAreaPisoValue}"
               IsSnapToTickEnabled="True" />
       <Label />
       <Button Content="Añadir"
